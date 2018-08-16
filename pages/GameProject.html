@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menuitem {
+  border-radius: 25px; /*Agives the elements rounded corners */
+  background-color:#669999;
+  padding:8px;
+  margin-top:7px;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  background-color:#669999;
+  float:left;
+  width:20%;
+
+  padding:18px;
+  margin-top:7px;
+
+  text-align:center;
+}
+.matchitem {
+  border-radius: 25px; /*Agives the elements rounded corners */
+  background-color:#669999;
+  padding:6px;
+  margin-top:7px;
+}
+
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+
+
+</style>
+
+<!-- The basic template for this html file was sourced from 
+https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_breakpoints -->
+
+</head>
+
+<body style="font-family:Verdana;color:#0a0909;">
+
+  <div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+    <h1>Language Practice</h1>
+  </div>
+
+  <div style="overflow:auto">
+
+    <div class="menu">
+      <div class="menuitem"> <span id="item1">Word 1</span> &nbsp; <input type="text" id="box1" size="4"></div>
+      <div class="menuitem"> <span id="item2">Word 2</span> &nbsp; <input type="text" id="box2" size="4"></div>
+      <div class="menuitem"> <span id="item3">Word 3</span> &nbsp; <input type="text" id="box3" size="4"></div>
+      <div class="menuitem"> <span id="item4">Word 4</span> &nbsp; <input type="text" id="box4" size="4"></div>
+      <div class="menuitem"> <span id="item5">Word 5</span> &nbsp; <input type="text" id="box5" size="4"></div>
+    </div>
+
+    <div class="main">
+      <h2>The Rule</h2>
+      <p>Match the word on the list by inserting words from the box.</p>
+
+      <div> <!--Language Selection: <input type="text" name="user" value=" ">-->
+        <select id="selection" onchange="selectFunction(this.value)" >
+          <option value="">Select Language</option>
+          <option value="spanish">Spanish</option>
+          <option value="swahili">Swahili</option>
+        </select>
+      </div>
+
+      <br>
+      <div> <button onclick="calculateScore()">Submit</button> </div>
+      <p> Score : <mark id="score">&nbsp;&nbsp;none </mark> </p>
+      <p id="textFeed">Feedback :</p>
+    </div>
+
+    <div class="right">
+      <!--<h3>Translations</h3>  maxlength="4"   -->
+      <div class="matchitem" id="match1">Match 1</div>
+      <div class="matchitem" id="match2">Match 2</div>
+      <div class="matchitem" id="match3">Match 3</div>
+      <div class="matchitem" id="match4">Match 4</div>
+      <div class="matchitem" id="match5">Match 5</div> 
+      <!--<div class="matchitem">5. &nbsp; <span id="match5">Match 5</span> </div>-->
+    </div>
+
+  </div>
+
+  <script src="mainScript.js"></script>
+
+</body>
+</html>
